@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Arsenal:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-playfair: "Playfair Display", serif;
+  --font-arsenal: "Arsenal", serif;
+  --font-arimo: "Arimo", serif;
+  --color-primary: #bca08a;
+  --color-secondary: #6f6a6a;
+  --color-fcolor: #3b3b3b;
+}
+
+/* Pendulum swing */
+@keyframes swing {
+  0% {
+    transform: rotate(5deg) translateY(2px);
+  }
+  50% {
+    transform: rotate(-5deg) translateY(-2px);
+  }
+  100% {
+    transform: rotate(5deg) translateY(2px);
+  }
+}
+
+.swing-animation {
+  animation: swing 4s ease-in-out infinite;
+  transform-origin: top center;
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(203, 202, 202, 0.4); /* gray-400 with opacity */
+}
