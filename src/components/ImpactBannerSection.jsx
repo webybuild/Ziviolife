@@ -30,7 +30,7 @@ export default function ImpactBannerSection() {
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.9 }}
-            className="max-w-4xl text-xl leading-tight text-white md:text-4xl font-arsenal"
+            className="max-w-4xl text-xl leading-tight tracking-wider text-white md:text-4xl font-arsenal"
           >
             <span className="font-bold">Zivio</span> crafts lighting that goes
             beyond <span className="font-bold">illumination</span>, combining

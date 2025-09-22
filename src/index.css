@@ -31,5 +31,5 @@
 
 .text-outline {
   color: transparent;
-  -webkit-text-stroke: 1px rgba(203, 202, 202, 0.4); /* gray-400 with opacity */
+  -webkit-text-stroke: 1px rgba(185, 185, 185, 0.366); /* gray-400 with opacity */
 }

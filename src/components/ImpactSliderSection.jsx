@@ -107,14 +107,14 @@ export default function ImpactSliderSection() {
             <div className="flex flex-row justify-between">
               <div className="p-6">
                 {" "}
-                <p className="text-base text-gray-800 font-arsenal">
+                <p className="text-lg text-gray-800 font-arsenal">
                   {currentProduct.name}
                 </p>
                 <a
                   href={currentProduct.link}
-                  className="mt-1 text-xs underline transition hover:text-gray-600"
+                  className="mt-1 text-sm underline underline-offset-4 transition hover:text-gray-600"
                 >
-                  View More
+                  View
                 </a>
               </div>
 
@@ -170,7 +170,7 @@ export default function ImpactSliderSection() {
             <span className="absolute right-0 font-serif text-9xl text-black -top-10">
               “
             </span>
-            <p className="py-4 text-2xl leading-relaxed text-black underline underline-offset-8">
+            <p className="py-4 text-2xl leading-relaxed text-black underline underline-offset-8 font-arsenal">
               The spirit of creativity and design can be seen in every detail
               from setting new trends to adapting seamlessly to modern
               architecture and lifestyles.
@@ -189,7 +189,7 @@ export default function ImpactSliderSection() {
               purpose. Each fixture blends form, function, and sustainability to
               transform spaces with timeless elegance and lasting performance.
             </p>
-            <button className="px-6 py-2 text-base font-semibold cursor-pointer transition border border-black md:w-40 hover:bg-black hover:text-white">
+            <button className="px-6 py-2 text-sm font-medium tracking-wide cursor-pointer transition border border-black md:w-40 hover:bg-black hover:text-white font-arimo">
               Find out more!
             </button>
           </div>

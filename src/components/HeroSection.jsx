@@ -76,7 +76,7 @@ export default function HeroSection() {
             <h2 className="mb-6 text-5xl font-medium leading-tight md:text-6xl font-playfair">
               <span className="text-primary">Future</span> of <br /> Lighting
             </h2>
-            <p className="mb-8 text-lg tracking-wide text-white font-arsenal">
+            <p className="mb-8 text-base tracking-wider text-white font-arsenal font-normal">
               Exceptional lighting solutions that blend beauty with unmatched
               performance.
             </p>

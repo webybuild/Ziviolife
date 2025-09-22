@@ -8,13 +8,13 @@ const projects = [
     id: 1,
     title: "Oberoi Sky City Mall",
     location: "Borivali, Maharashtra",
-    img: projectOne, // replace with your image path
+    img: projectTwo, // replace with your image path
   },
   {
     id: 2,
     title: "Barc Mumbai",
     location: "Mumbai, Maharashtra",
-    img: projectTwo, // replace with your image path
+    img: projectOne, // replace with your image path
   },
 ];
 
@@ -60,7 +60,7 @@ export default function ProjectsSection() {
         viewport={{ once: true }}
         className="flex justify-center mt-12"
       >
-        <button className="px-6 py-2 border border-white hover:bg-white hover:text-black transition">
+        <button className="px-6 py-2 text-sm font-medium tracking-wide cursor-pointer transition border border-white md:w-40 hover:bg-white hover:text-black font-arimo">
           Read More
         </button>
       </motion.div>

@@ -7,9 +7,9 @@ export default function IntroSection() {
     visible: { opacity: 1, x: 0 },
   };
   return (
-    <section className="max-w-7xl mx-auto w-full gap-7 flex flex-col md:flex-row items-center justify-between px-6 md:px-0 py-30 font-arsenal">
+    <section className="max-w-7xl mx-auto w-full gap-7 flex flex-col md:flex-row items-center justify-between px-6 md:px-0 py-30 ">
       {/* Left Content */}
-      <div className="space-y-4 text-center md:text-left md:w-1/2">
+      <div className="space-y-4 text-center md:text-left md:w-1/2 font-arsenal">
         <motion.h1
           variants={slideInRight}
           initial="hidden"
@@ -33,7 +33,7 @@ export default function IntroSection() {
       </div>
 
       {/* Right Content */}
-      <div className="mt-8 text-lg leading-relaxed text-center text-gray-600 md:mt-0 md:w-1/2 md:text-left">
+      <div className="mt-8 text-base leading-relaxed text-center text-gray-600 md:mt-0 md:w-1/2 md:text-left font-arimo">
         <p>
           Zivio delivers innovative, sustainable lighting solutions that bring
           brilliance and efficiency to residential and commercial spaces.
