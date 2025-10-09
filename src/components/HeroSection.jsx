@@ -1,5 +1,5 @@
 import React from "react";
-import lightImg from "../assets/light2.png";
+import lightImg from "../assets/home/pend.png";
 import logo from "../assets/logo.png";
 import homeBg from "/src/assets/home/Landing-bg.jpg";
 import { motion } from "framer-motion";
@@ -29,14 +29,14 @@ export default function HeroSection() {
           <motion.img
             src={lightImg}
             alt="Lighting Product"
-            className="z-10 object-contain w-full px-6 -mt-10 pb-9 swing-animation lg:scale-200 max-w-[22rem]"
+            className="z-10 object-contain w-full px-6 -mt-20 pb-9 swing-animation lg:scale-200 max-w-[22rem]"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           />
 
           {/* Product Info */}
-          <div className="px-6 py-10 mt-24">
+          <div className="px-6 py-10 mt-50">
             <p className="mb-2 text-lg text-secondary font-arsenal">
               Recessed ceiling luminaire
             </p>
