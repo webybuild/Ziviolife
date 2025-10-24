@@ -6,21 +6,22 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Contact from "./pages/Contact";
 import Downloads from "./pages/Downloads";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 
 function App() {
   return (
     <Router>
       {/* Navigation visible on every page */}
       <FullScreenMenu></FullScreenMenu>
-
       {/* Page content changes */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/company/about" element={<About />} />
         <Route path="/downloads" element={<Downloads />} />
         {/* <Route path="/services" element={<Services />} /> */}
         <Route path="/contact" element={<Contact />} />
       </Routes>
+      <ScrollToTopButton></ScrollToTopButton>
       <Footer></Footer>
     </Router>
   );

@@ -67,7 +67,7 @@ export default function DesignBalanceSection() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         viewport={{ once: true }}
-        className="absolute bottom-4 sm:bottom-8 md:bottom-10 
+        className="absolute bottom-4 sm:bottom-8 md:bottom-40 
                    right-4 sm:right-6 md:right-10 
                    w-[200px] sm:w-[260px] md:w-[320px] lg:w-[450px] 
                    shadow-lg z-20"

@@ -10,7 +10,7 @@ export default function Footer() {
     { name: "Twitter", icon: <Twitter size={16} /> },
   ];
   return (
-    <footer className="bg-[#1C1C1C] text-gray-300 text-sm font-arimo pt-12">
+    <footer className="bg-[#060606] text-gray-300 text-sm font-arimo pt-12">
       <div className="max-w-7xl mx-auto px-6 py-12">
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -106,10 +106,19 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-700 mt-8 py-4 px-6 flex flex-col md:flex-row justify-between items-center text-sm text-[#989898]">
-        <p>Copyright © 2025 Ziviolife.</p>
-        <p>
-          Powered by <span className="text-white font-medium">Webybuild.</span>
-        </p>
+        <div className="flex justify-between w-full px-16">
+          {" "}
+          <div>
+            <p>Copyright © 2025 Ziviolife.</p>
+          </div>
+          <div>
+            {" "}
+            <p>
+              Powered by{" "}
+              <span className="text-white font-medium">Webybuild.</span>
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   );
