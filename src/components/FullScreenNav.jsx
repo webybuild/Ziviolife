@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
+import navBg from "/src/assets/navBg.jpeg";
 
 export default function FullScreenMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -94,7 +95,7 @@ export default function FullScreenMenu() {
 
             {/* background image (fades in after scale starts) */}
             <motion.img
-              src="/src/assets/navBg.jpeg"
+              src={navBg}
               alt="Background"
               initial={{ opacity: 0, scale: 1.02 }}
               animate={{ opacity: 1, scale: 1 }}
