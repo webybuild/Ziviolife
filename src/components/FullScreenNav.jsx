@@ -298,19 +298,11 @@ export default function FullScreenMenu() {
 
                         <div className="flex gap-3 items-center">
                           <a
-                            href="/contact"
+                            href="/admin"
                             onClick={closeAll}
                             className="inline-block px-5 py-3 bg-white text-black rounded-md font-medium shadow-sm hover:opacity-95 transition cursor-pointer"
                           >
-                            Get in touch
-                          </a>
-
-                          <a
-                            href="/downloads"
-                            onClick={closeAll}
-                            className="inline-block px-4 py-2 border border-white/20 text-white rounded-md hover:bg-white/10 transition cursor-pointer"
-                          >
-                            Catalog
+                            Login
                           </a>
                         </div>
 

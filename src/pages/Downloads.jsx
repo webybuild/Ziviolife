@@ -1,84 +1,87 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PDFViewer from "../components/PDFViewer";
+import PageHeader from "../components/PageHeader";
+import headBg from "../../src/assets/Downloads/headBg.jpeg";
+import FullScreenLoader from "../components/FullScreenLoader";
 
 export default function Downloads() {
+  const pdfs = [
+    {
+      fileId: "1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism",
+      title: "ZIVIO Product Catalogue 2025",
+    },
+    {
+      fileId: "17087cBuJJW0AZKFDlMvn6b4g9AqenCCD",
+      title: "ZIVIO Product Catalogue 2025",
+    },
+    {
+      fileId: "1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism",
+      title: "ZIVIO Product Catalogue 2025",
+    },
+    {
+      fileId: "1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism",
+      title: "ZIVIO Product Catalogue 2025",
+    },
+    {
+      fileId: "1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism",
+      title: "ZIVIO Product Catalogue 2025",
+    },
+    {
+      fileId: "1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism",
+      title: "ZIVIO Product Catalogue 2025",
+    },
+    {
+      fileId: "1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism",
+      title: "ZIVIO Product Catalogue 2025",
+    },
+    {
+      fileId: "1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism",
+      title: "ZIVIO Product Catalogue 2025",
+    },
+  ];
+
+  const [loading, setLoading] = useState(true);
+  const [loadedCount, setLoadedCount] = useState(0);
+
+  // Called every time one PDF iframe finishes loading
+  const handlePdfLoad = () => {
+    setLoadedCount((prev) => prev + 1);
+  };
+
+  // Once all PDFs are loaded, hide the loader
+  useEffect(() => {
+    if (loadedCount >= pdfs.length) {
+      const timer = setTimeout(() => setLoading(false), 400);
+      return () => clearTimeout(timer);
+    }
+  }, [loadedCount, pdfs.length]);
+
   return (
     <>
-      <div className="relative bg-[#0f1724] text-white">
-        <div className="px-8 py-20 max-w-6xl mx-auto">
-          <h1 className="text-4xl font-semibold">Discover BlockGems</h1>
-        </div>
+      {loading && <FullScreenLoader />}
 
-        <svg
-          className="absolute bottom-0 left-0 w-full h-36 md:h-48"
-          viewBox="0 0 1440 200"
-          preserveAspectRatio="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill="#ffffff"
-            d="
-        M0,0
-        H980            /* straight to 980 */
-        L1220,90        /* diagonal line to (1220,90) */
-        Q1330,120 1440,100  /* quadratic curve (rounded) to right edge */
-        V200
-        H0
-        Z
-      "
+      <PageHeader
+        title="Downloads"
+        subtitle={
+          <>
+            ZIVIO combines <strong>precision</strong> engineering and{" "}
+            <strong>timeless</strong> design to shape a brighter, more{" "}
+            <strong>sustainable</strong> world.
+          </>
+        }
+        bgImage={headBg}
+        highlight="loads"
+      />
+
+      <div className="flex flex-wrap justify-center items-start gap-10 px-4 py-12">
+        {pdfs.map((pdf, index) => (
+          <PDFViewer
+            key={index}
+            fileId={pdf.fileId}
+            title={pdf.title}
+            onLoad={handlePdfLoad} // 👈 receive load callback
           />
-        </svg>
-      </div>
-
-      <div className="flex flex-wrap gap-12 justify-center items-center">
-        <PDFViewer
-          fileId="1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism"
-          title="ZIVIO Product Catalogue 2025"
-        ></PDFViewer>
-        <PDFViewer
-          fileId="17087cBuJJW0AZKFDlMvn6b4g9AqenCCD"
-          title="ZIVIO Product Catalogue 2025"
-        ></PDFViewer>
-        <PDFViewer
-          fileId="1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism"
-          title="ZIVIO Product Catalogue 2025"
-        ></PDFViewer>
-        <PDFViewer
-          fileId="1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism"
-          title="ZIVIO Product Catalogue 2025"
-        ></PDFViewer>
-        <PDFViewer
-          fileId="1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism"
-          title="ZIVIO Product Catalogue 2025"
-        ></PDFViewer>
-        <PDFViewer
-          fileId="1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism"
-          title="ZIVIO Product Catalogue 2025"
-        ></PDFViewer>
-        <PDFViewer
-          fileId="1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism"
-          title="ZIVIO Product Catalogue 2025"
-        ></PDFViewer>
-        <PDFViewer
-          fileId="1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism"
-          title="ZIVIO Product Catalogue 2025"
-        ></PDFViewer>
-        <PDFViewer
-          fileId="1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism"
-          title="ZIVIO Product Catalogue 2025"
-        ></PDFViewer>
-        <PDFViewer
-          fileId="1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism"
-          title="ZIVIO Product Catalogue 2025"
-        ></PDFViewer>
-        <PDFViewer
-          fileId="1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism"
-          title="ZIVIO Product Catalogue 2025"
-        ></PDFViewer>
-        <PDFViewer
-          fileId="1UEH0e6B-PEE5gFYBwUv6PcadsRXC1ism"
-          title="ZIVIO Product Catalogue 2025"
-        ></PDFViewer>
+        ))}
       </div>
     </>
   );
