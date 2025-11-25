@@ -1,125 +1,201 @@
 import React from "react";
-import { motion } from "framer-motion";
-import { Linkedin, Instagram, Twitter } from "lucide-react";
-import logoFooter from "/src/assets/logoFooter.svg";
+import { Link } from "react-router-dom";
+import webybuild from "../../src/assets/newLogo.png";
 
-export default function Footer() {
-  const socials = [
-    { name: "Linkedin", icon: <Linkedin size={16} /> },
-    { name: "Instagram", icon: <Instagram size={16} /> },
-    { name: "Twitter", icon: <Twitter size={16} /> },
-  ];
+const Footer = () => {
   return (
-    <footer className="bg-[#060606] text-gray-300 text-sm font-arimo pt-12">
-      <div className="max-w-7xl mx-auto px-6 py-12">
-        {/* Top Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Logo + Social */}
-          <div>
-            <img
-              className="w-40 h-auto mb-6 -mt-6"
-              src={logoFooter}
-              alt="Logo Footer"
-            />
-            <ul className="space-y-4">
-              {socials.map((social, index) => (
-                <motion.li
-                  key={index}
-                  whileHover="hover"
-                  className="relative flex items-center gap-2 cursor-pointer text-[#7F7F7F] hover:text-white transition"
-                >
-                  {social.icon} {social.name}
-                  {/* Animated underline */}
-                  <motion.div
-                    initial={{ scaleX: 0 }}
-                    variants={{
-                      hover: { scaleX: 0.5 },
-                    }}
-                    transition={{ duration: 0.4, ease: "easeInOut" }}
-                    className="absolute left-0 -bottom-2 h-[1px] w-full origin-left bg-[#8C8C8C]"
-                  />
-                </motion.li>
-              ))}
-            </ul>
-          </div>
+    <>
+      <footer className="w-full px-6 lg:px-12 py-8 mx-auto place-content-center bg-[#1B4242] relative -z-30 -mt-40 h-[45rem] lg:h-[35rem]">
+        {/* <h1 className="flex justify-center items-center text-2xl lg:text-[2rem] mb-12 text-center">
+          Build Smarter. Better. Faster. Websites
+        </h1> */}
+        <div className="w-full fixed bottom-0 left-0 ">
+          {/* <div className="grid grid-cols-2 gap-0 md:gap-10 mb-3 md:grid-cols-3 lg:grid-cols-12 lg:gap-20">
+            <div className="col-span-4">
+              <a
+                className="flex gap-1 justify-center items-center w-9/12"
+                href="/"
+                title="Webybuild"
+              >
+                <div className="flex-[1]">
+                  <img className="w-full" src="" alt="" />
+                </div>
+                <div className="flex-[2]">
+                  <p className="multi_color_heading font-bold uppercase">
+                    Artizelite
+                  </p>
+                  <p className="multi_color_heading uppercase font-semibold tracking-widest text-xs"></p>
+                </div>
+              </a>
+              <p className="my-4 text-sm leading-normal text-justify text-gray-500">
+                Artizelite presents some of its best with new qualities, various
+                products have high watt capicity with long lasting capicity and
+                always bright, see how we present a new product just for you
+                all.
+              </p>
+            </div>
 
-          {/* Explore */}
-          <div>
-            <h3 className="text-white font-medium mb-4 text-lg">Explore</h3>
-            <ul className="space-y-2 text-[#989898] text-sm">
-              <li className="hover:text-white cursor-pointer">Home</li>
-              <li className="hover:text-white cursor-pointer">About</li>
-              <li className="hover:text-white cursor-pointer">Products</li>
-              <li className="hover:text-white cursor-pointer">Projects</li>
-              <li className="hover:text-white cursor-pointer">Downloads</li>
-              <li className="hover:text-white cursor-pointer">Contact</li>
-            </ul>
-          </div>
+            <nav className="col-span-1 md:col-span-1 lg:col-span-2 mt-4">
+              <p className="mb-3 text-sm font-semibold tracking-widest text-gray-400 uppercase">
+                Company
+              </p>
+              <Link
+                to="/"
+                className="flex mb-3 text-sm font-normal tracking-widest text-black transition md:mb-2 text_effect"
+              >
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className="flex mb-3 text-sm font-normal tracking-widest text-black transition md:mb-2 text_effect"
+              >
+                About
+              </Link>
 
-          {/* Quick Links */}
-          <div>
-            <h3 className="text-white font-medium mb-4 text-lg">Quick Links</h3>
-            <ul className="space-y-2 text-[#989898] text-sm">
-              <li className="hover:text-white cursor-pointer">
-                Terms and Conditions
-              </li>
-              <li className="hover:text-white cursor-pointer font-medium">
-                Privacy Policy
-              </li>
-              <li className="hover:text-white cursor-pointer">
-                Cancellation and Refund
-              </li>
-            </ul>
-          </div>
+              <Link
+                to="/blogs"
+                className="flex mb-3 text-sm font-normal tracking-widest text-black transition md:mb-2 text_effect"
+              >
+                Blogs
+              </Link>
+              <Link
+                to="/growth"
+                className="flex mb-3 text-sm font-normal tracking-widest text-black transition md:mb-2 text_effect"
+              >
+                Growth
+              </Link>
+              <Link
+                to="/contacts"
+                className="flex mb-3 text-sm font-normal tracking-widest transition md:mb-2 text_effect"
+              >
+                Contacts
+              </Link>
+            </nav>
+            <nav className="col-span-1 md:col-span-1 lg:col-span-3 mt-4">
+              <p className="mb-3 text-sm font-semibold tracking-wider text-gray-400 uppercase">
+                Services
+              </p>
+              <Link
+                to="/services/web-design"
+                className="flex mb-3 text-sm font-normal tracking-widest text-black transition md:mb-2 text_effect"
+              >
+                Website Design
+              </Link>
+              <a
+                href="/services/web-development"
+                className="flex mb-3 text-sm font-normal tracking-widest text-black transition md:mb-2 text_effect"
+              >
+                Web Development
+              </a>
+              <a
+                href="/services/inventory-management"
+                className="flex mb-3 text-sm font-normal tracking-widest text-black transition md:mb-2 text_effect"
+              >
+                Inventory Management
+              </a>
+              <a
+                href="/services/cloud-services"
+                className="flex mb-3 text-sm font-normal tracking-widest text-black transition md:mb-2 text_effect"
+              >
+                Cloud Services
+              </a>
+              <Link
+                to="/services/logo-design"
+                className="flex mb-3 text-sm font-normal tracking-widest text-black transition md:mb-2 text_effect"
+              >
+                Logo Design
+              </Link>
+              <a
+                href="/services/digital-marketing"
+                className="flex mb-3 text-sm font-normal tracking-widest text-black transition md:mb-2 text_effect"
+              >
+                Seo and Digital Marketing
+              </a>
+            </nav>
 
-          {/* Category */}
-          <div>
-            <h3 className="text-white font-medium mb-4 text-lg">Category</h3>
-            <ul className="space-y-2 text-[#989898] text-sm">
-              <li className="hover:text-white cursor-pointer">Indoor</li>
-              <li className="hover:text-white cursor-pointer">Outdoor</li>
-              <li className="hover:text-white cursor-pointer">Decorative</li>
-              <li className="hover:text-white cursor-pointer">Pole</li>
-              <li className="hover:text-white cursor-pointer">Solar</li>
-              <li className="hover:text-white cursor-pointer">Highmast</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Contact Block */}
-        <div className="border-t border-gray-700 mt-12 pt-8 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <div>
-            <h4 className="text-white text-2xl font-medium mb-2 text-center">
-              Contact
-            </h4>
-          </div>
-          <div className="text-[#989898]">
-            Infinity Square, Unit No. 110, 1st Floor, Golani Naka, Vasai East,
-            Waliv, Maharashtra 401208, India.
-          </div>
-          <div className="space-y-2 text-[#989898]">
-            <p>Tel. +91-9552152384 / +91-8237572384</p>
-            <p>Mail. shree@ziviolife.com</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="border-t border-gray-700 mt-8 py-4 px-6 flex flex-col md:flex-row justify-between items-center text-sm text-[#989898]">
-        <div className="flex justify-between w-full px-16">
-          {" "}
-          <div>
-            <p>Copyright © 2025 Ziviolife.</p>
-          </div>
-          <div>
-            {" "}
-            <p>
-              Powered by{" "}
-              <span className="text-white font-medium">Webybuild.</span>
+            <div className="col-span-3">
+              <p className="mb-3 text-sm font-semibold tracking-wider text-gray-400 uppercase">
+                Get in Touch
+              </p>
+              <div className="my-4">
+                <div className="flex items-center gap-2">
+                  <img className="w-[1.8rem] md:w-[2rem]" src="" alt="" />
+                  <h1 className="text-gray-500 text-sm lg:text-base">
+                    hello@webybuild.com
+                  </h1>
+                </div>
+              </div>
+              <div className="my-4">
+                <div className="flex items-center gap-2">
+                  <img className="w-[2rem]" src="" alt="" />
+                  <h1 className="font-light text-sm lg:text-base">
+                    USA, Canada, Germany, Australia, Switzerland, Ireland
+                  </h1>
+                </div>
+              </div>
+              <div className="">
+                <h1 className="font-bold my-4">Follow Us</h1>
+                <div className="flex gap-3 items-center">
+                  <a
+                    href="https://www.linkedin.com/in/harsh-j-b509b4172/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="" alt="twitter" />
+                  </a>
+                  <a
+                    href="https://twitter.com/WEBYBUILD"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="" alt="twitter" />
+                  </a>
+                  <a
+                    href="https://www.facebook.com/webybuild"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="" alt="twitter" />
+                  </a>
+                  <a
+                    href="https://in.pinterest.com/webybuild/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="" alt="twitter" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/webybuild/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img src="" alt="twitter" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div> */}
+          <div className="flex flex-col-reverse items-start justify-between py-2 mt-4 border-t border-gray-100 md:flex-row md:items-center">
+            <p className="w-full mb-6 text-xs text-center text-white md:mb-0 lg:pl-4">
+              © Copyright 2024 Artizelite. All Rights Reserved.
             </p>
+            <div className="w-full flex items-center justify-center space-x-6 md:items-center md:justify-center pr-4">
+              <Link
+                to="https://www.weybuild.com"
+                className="text-xs text-white transition text_effect flex items-center gap-1"
+              >
+                Powered by
+                <span>
+                  <img className="w-6" src={webybuild} alt="" srcset="" />
+                </span>
+                www.webybuild.com
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
-}
+};
+
+export default Footer;

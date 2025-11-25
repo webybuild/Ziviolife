@@ -5,4 +5,12 @@ import tailwindcss from "@tailwindcss/vite"; // Use this cmd to install tailwind
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+  // Ensure esbuild parses JSX in .js files during dependency scanning
+  optimizeDeps: {
+    esbuildOptions: {
+      loader: {
+        ".js": "jsx",
+      },
+    },
+  },
 });

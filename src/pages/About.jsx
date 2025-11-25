@@ -1,14 +1,14 @@
-import PageHeader from "../components/PageHeader";
+import PageHeader from "../home_components/PageHeader";
 import aboutBg from "../../src/assets/About/about.jpeg";
 import topImg from "../../src/assets/About/topImg.png";
 import philImg from "../../src/assets/About/phil.png";
 import trustImg from "../../src/assets/About/collage.png";
 import bannerSqr from "../../src/assets/banner/designBg.png";
-import ValuesGridSection from "../components/ValuesGridSection";
-import PartnersSection from "../components/PartnersSection";
-import TeamSection from "../components/TeamSection";
-import TestimonialsSection from "../components/TestimonialsSection";
-import ContactSection from "../components/ContactSection";
+import ValuesGridSection from "../home_components/ValuesGridSection";
+import PartnersSection from "../home_components/PartnersSection";
+import TeamSection from "../home_components/TeamSection";
+import TestimonialsSection from "../home_components/TestimonialsSection";
+import ContactSection from "../home_components/ContactSection";
 
 export default function About() {
   return (

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import PDFViewer from "../components/PDFViewer";
-import PageHeader from "../components/PageHeader";
+import PDFViewer from "../home_components/PDFViewer";
+import PageHeader from "../home_components/PageHeader";
 import headBg from "../../src/assets/Downloads/headBg.jpeg";
-import FullScreenLoader from "../components/FullScreenLoader";
+import FullScreenLoader from "../home_components/FullScreenLoader";
 
 export default function Downloads() {
   const pdfs = [

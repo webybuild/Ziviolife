@@ -1,0 +1,7 @@
+{
+  "loginBg": "w-full h-screen bg-color-2 flex justify-center items-center",
+  "loginForm": " bg-color-3 rounded-md",
+  "loginLabel": "m-8",
+  "loginInput": "",
+  "loginButton": "mt-8"
+}

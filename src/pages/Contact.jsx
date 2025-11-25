@@ -1,7 +1,7 @@
 // src/pages/Contact.jsx
 import React from "react";
-import ContactMap from "../components/ContactMap";
-import PageHeader from "../components/PageHeader";
+import ContactMap from "../home_components/ContactMap";
+import PageHeader from "../home_components/PageHeader";
 import headBg from "../../src/assets/Downloads/headBg.jpeg";
 
 export default function Contact() {
