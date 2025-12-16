@@ -18,9 +18,11 @@ function CategoryForm({
   const [subCategoryId, setSubCategoryId] = useRecoilState(subCategoryIdAtom);
   const [mainProductId, setMainProductId] = useRecoilState(mainProductIdAtom);
 
-  const selectStyle = "outline-none text-sm rounded-md px-4 py-2 w-full";
-  const inputStyle = "outline-none rounded-md px-2 py-1 w-full";
-  const labelStyle = "font-semibold text-white text-sm py-1 px-2";
+  const selectStyle =
+    "outline-none text-sm rounded-md px-4 py-2 w-full bg-white cursor-pointer";
+  const inputStyle = "outline-none rounded-md px-2 py-1 w-full cursor-pointer";
+  const labelStyle =
+    "font-semibold text-white text-sm py-1 px-2 cursor-pointer";
 
   return (
     <div>
@@ -31,7 +33,7 @@ function CategoryForm({
               <label className={labelStyle}>Category</label>
               <button
                 onClick={() => setShowCategoryModal(true)}
-                className="px-6 py-1 text-white text-sm text-center ml-4 bg-[#1b4242]"
+                className="px-6 py-1 text-white text-sm text-center ml-4 bg-[#1b4242] cursor-pointer"
               >
                 + New
               </button>
@@ -57,7 +59,7 @@ function CategoryForm({
               <label className={labelStyle}>Sub-Category</label>
               <button
                 onClick={() => setShowSubCategoryModal(true)}
-                className="px-6 py-1 text-white text-sm text-center ml-4 bg-[#1b4242]"
+                className="px-6 py-1 text-white text-sm text-center ml-4 bg-[#1b4242] cursor-pointer"
               >
                 + New
               </button>
@@ -101,7 +103,7 @@ function CategoryForm({
                 {mainProducts
                   .filter((mp) => mp.subCategoryId === +subCategoryId)
                   .map((prd, ind) => (
-                    <option key={ind} value={prd.id}>
+                    <option key={ind} value={prd.id} className="cursor-pointer">
                       {prd.name}
                     </option>
                   ))}

@@ -21,12 +21,10 @@ import loaderState from "../../atoms/loaderStateAtom";
 import { toast } from "react-toastify";
 
 function MainProductInfo({ showButton, width }) {
-  const [mainProductName, setMainProductName] = useRecoilState(
-    mainProductNameState
-  );
-  const [mainProductInfo, setMainProductInfo] = useRecoilState(
-    mainProductInfoState
-  );
+  const [mainProductName, setMainProductName] =
+    useRecoilState(mainProductNameState);
+  const [mainProductInfo, setMainProductInfo] =
+    useRecoilState(mainProductInfoState);
   const [productInfo, setProductInfo] = useRecoilState(singleProductInfo);
   const [cat, setCat] = useState("");
   const [subCat, setSubCat] = useState("");
@@ -80,10 +78,10 @@ function MainProductInfo({ showButton, width }) {
         url2 + "/main_product/" + mainProductInfo.id
       );
       toast.success(res.data.message, { autoClose: 3000 });
-      let path = window.location.pathname.split('/')
-      path.splice([path.length - 1], 1)
-      console.log(path.join('/'))
-      navigate(path.join('/'))
+      let path = window.location.pathname.split("/");
+      path.splice([path.length - 1], 1);
+      console.log(path.join("/"));
+      navigate(path.join("/"));
       // window.location.reload()
       setLoader(false);
     } catch (error) {
@@ -235,7 +233,7 @@ function MainProductInfo({ showButton, width }) {
                     </div>
                     <div className="category-title bg-[#092635] text-white px-4 py-4 flex flex-col gap-3">
                       <p>
-                        {item.name} - {" "}
+                        {item.name} -{" "}
                         <span className="font-light">{item.code}</span>
                       </p>
                       <p>{item.power}</p>
