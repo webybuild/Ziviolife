@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import NavigateNextIcon from "@mui/icons-material/NavigateNext";
 import loaderState from "../../atoms/loaderStateAtom";
+import { toast } from "react-toastify";
 
 function MainProducts({ admin }) {
   const [subCategoryName, setSubCategoryName] = useRecoilState(
@@ -40,6 +41,9 @@ function MainProducts({ admin }) {
       setLoader(false);
     } catch (error) {
       console.log(error);
+      toast.error(error.response.data.message || error.message, {
+        autoClose: 3000,
+      });
       setLoader(false);
     }
   }

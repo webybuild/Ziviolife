@@ -14,6 +14,7 @@ import classI from "../../assets/classI.png";
 import ip65 from "../../assets/ip65.png";
 import ik09 from "../../assets/ik09.png";
 import loaderState from "../../atoms/loaderStateAtom";
+import { toast } from "react-toastify";
 
 function MainProductInfo() {
   const [mainProductName, setMainProductName] = useRecoilState(
@@ -53,6 +54,9 @@ function MainProductInfo() {
       setLoader(false)
     } catch (error) {
       console.log(error);
+      toast.error(error.response.data.message || error.message, {
+        autoClose: 3000,
+      });
       setLoader(false)
     }
   }

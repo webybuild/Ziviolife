@@ -5,6 +5,7 @@ import axios from "axios";
 import { url } from "../../utils/config";
 import { Link } from "react-router-dom";
 import loaderState from "../../atoms/loaderStateAtom";
+import { toast } from "react-toastify";
 
 function ProductSubCategory({ admin }) {
   const [categoryName, setCategoryName] = useRecoilState(categoryNameState);
@@ -33,6 +34,9 @@ function ProductSubCategory({ admin }) {
       setLoader(false);
     } catch (error) {
       console.log(error);
+      toast.error(error.response.data.message || error.message, {
+        autoClose: 3000,
+      });
       setLoader(false);
     }
   }
