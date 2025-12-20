@@ -63,7 +63,7 @@ function MainProducts({ admin }) {
               {cat}
             </Typography>
           </Breadcrumbs>
-          <h1 className="text-3xl mt-3 font-bold">{subCat}</h1>
+          <h1 className="text-3xl mt-3 font-bold">{subCat.replace("%20", " ")}</h1>
         </div>
         <div className="backgroundBody py-12">
           <div className="category flex gap-16 flex-wrap justify-center items-center mb-32">

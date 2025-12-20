@@ -18,10 +18,10 @@ import About from "./About";
 import Downloads from "./Downloads";
 import Contact from "./Contact";
 import Admin from "./admin/Admin";
-import ProductSubCategory from "../components/admin/ProductSubCategory.jsx";
-import MainProducts from "../components/admin/MainProducts.jsx";
-import MainProductInfo from "../components/admin/MainProductInfo.jsx";
-import SingleProduct from "../components/admin/SingleProduct";
+import ProductSubCategory from "../components/product/ProductSubCategory.jsx";
+import MainProducts from "../components/product/MainProducts.jsx";
+import MainProductInfo from "../components/product/MainProductInfo.jsx";
+import SingleProduct from "../components/product/SingleProduct";
 
 // This inner component can safely use useLocation() because it’s inside <Router>
 function AppContent({ loading, setLoading }) {
