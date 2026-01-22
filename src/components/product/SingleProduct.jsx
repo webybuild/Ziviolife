@@ -29,27 +29,31 @@ import { toast } from "react-toastify";
 
 function SingleProduct() {
   const [info, setInfo] = useRecoilState(singleProductInfo);
-  const [mainProductName, setMainProductName] = useRecoilState(mainProductNameState);
+  const [mainProductName, setMainProductName] =
+    useRecoilState(mainProductNameState);
   const [cat, setCat] = useState("");
   const [subCat, setSubCat] = useState("");
   const [mainProd, setMainProd] = useState("");
   const [prod, setProd] = useState("");
-  const [ loader, setLoader ] = useRecoilState(loaderState)
+  const [loader, setLoader] = useRecoilState(loaderState);
 
   useEffect(() => {
-    if(Object.keys(info).length === 0) {
-      fetchSingleProductInfo()
+    if (Object.keys(info).length === 0) {
+      fetchSingleProductInfo();
     }
-  }, [])
+  }, []);
 
   async function fetchSingleProductInfo() {
     try {
       setLoader(true);
-      const product = window.location.pathname.split('/')[window.location.pathname.split('/').length - 1]
-      console.log(product)
+      const product =
+        window.location.pathname.split("/")[
+          window.location.pathname.split("/").length - 1
+        ];
+      console.log(product);
       const res = await axios.get(url + "/product/" + product);
-      console.log(res)
-      setInfo(res.data.data)
+      console.log(res);
+      setInfo(res.data.data);
       toast.success(res.data.message, { autoClose: 3000 });
       setLoader(false);
     } catch (error) {
@@ -84,7 +88,7 @@ function SingleProduct() {
     { title: "BIM IFC", image: icon6, key: "bim" },
     { title: "DIALux ULD", image: icon7, key: "dialux" },
     { title: "IES", image: icon8, key: "ies" },
-    { title: "3D", image: icon9, key: '3d-view' },
+    { title: "3D", image: icon9, key: "3d-view" },
     { title: "AR Tracker", image: icon10, key: "ar" },
     { title: "CE", image: icon11, key: "ce" },
   ];
@@ -102,7 +106,6 @@ function SingleProduct() {
       }
     }
   }
-
 
   return (
     <>
@@ -144,7 +147,11 @@ function SingleProduct() {
                   </h1>
                 </div>
                 <div className="border-solid border-zinc-200 border w-80 flex justify-center items-center">
-                {info.images ? <img src={url + "/images/" + info?.images[0]} alt="" /> : <img alt='variant-image' src=''/>}
+                  {info.images ? (
+                    <img src={url + "/images/" + info?.images[0]} alt="" />
+                  ) : (
+                    <img alt="variant-image" src="" />
+                  )}
                 </div>
                 <div className="product_description mt-5 flex items-center">
                   <span>260x75 mm - 500 mm - 1 side</span>
