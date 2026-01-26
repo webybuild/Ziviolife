@@ -187,7 +187,7 @@ export default function ImpactSliderSection() {
               className="object-cover w-full rounded-sm shadow"
             />
             <p className="text-base leading-relaxed text-gray-600 py-8 font-arimo">
-              At Zivio, lighting is more than illumination it’s art with
+              At Ziviolife, lighting is more than illumination it’s art with
               purpose. Each fixture blends form, function, and sustainability to
               transform spaces with timeless elegance and lasting performance.
             </p>
