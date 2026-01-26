@@ -1,13 +1,15 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import productOne from "/src/assets/Products/gardenlight.png";
-import productTwo from "/src/assets/Products/a.png";
-import productThree from "/src/assets/Products/b.png";
-import productFour from "/src/assets/Products/c.png";
-import gardenBg from "/src/assets/project/gardenbg.jpeg";
-import interBg from "/src/assets/project/internoffice.jpeg";
-import bgThree from "/src/assets/project/project1.png";
+
+import productOne from "../assets/Products/gardenlight.png";
+import productTwo from "../assets/Products/a.png";
+import productThree from "../assets/Products/b.png";
+import productFour from "../assets/Products/c.png";
+
+import gardenBg from "../assets/project/gardenbg.jpeg";
+import interBg from "../assets/project/internoffice.jpeg";
+import bgThree from "../assets/project/project1.png";
 
 export default function ImpactSliderSection() {
   const productCarousel = [
@@ -52,7 +54,7 @@ export default function ImpactSliderSection() {
   const handlePrev = () => {
     setDirection(-1);
     setCurrentIndex((prev) =>
-      prev === 0 ? productCarousel.length - 1 : prev - 1
+      prev === 0 ? productCarousel.length - 1 : prev - 1,
     );
   };
 
