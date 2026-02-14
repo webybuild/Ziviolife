@@ -159,12 +159,12 @@ function MainProductInfo({ showButton, width }) {
                 </h2>
                 <p className="normal-case">{mainProductInfo.description}</p>
               </div>
-              <div className="stampImg flex items-center gap-4 mt-5">
-                <img src={retilap} alt="" />
-                <img src={ce} alt="" />
-                <img src={classI} alt="" />
-                <img src={ip65} alt="" />
-                <img src={ik09} alt="" />
+              <div className="flex items-center gap-6 mt-8">
+                {
+                  mainProductInfo.complianceImages?.map((imgUrl, ind) => 
+                  <img key={ind} src={url + "/images/" + imgUrl} alt="cmp_img"/>
+                )
+                }
               </div>
             </div>
           </div>
@@ -189,22 +189,6 @@ function MainProductInfo({ showButton, width }) {
                     alt=""
                   />
                 ))}
-              </div>
-              <div className="my-8">
-                <div className="my-3">
-                  <h1 className="font-bold">Optic</h1>
-                </div>
-                <div className="flex flex-wrap gap-4">
-                  {mainProductInfo?.opticImages?.map((image, ind) => (
-                    <img
-                      key={ind}
-                      src={url + "/images/" + image}
-                      height={"70px"}
-                      width={"70px"}
-                      alt=""
-                    />
-                  ))}
-                </div>
               </div>
             </div>
           </div>
@@ -231,19 +215,12 @@ function MainProductInfo({ showButton, width }) {
                         alt=""
                       />
                     </div>
-                    <div className="category-title bg-[#092635] text-white px-4 py-4 flex flex-col gap-3">
-                      <p>
-                        {item.name} -{" "}
-                        <span className="font-light">{item.code}</span>
+                    <div className="bg-[#3a3a3a] p-4 text-white space-y-1">
+                      <p className="font-medium">{item.name}</p>
+                      <p className="text-xs opacity-80">
+                        Product Code: {item.code}
                       </p>
-                      <p>{item.power}</p>
-                      <img
-                        className="max-w-[3rem]"
-                        src={url + "/images/" + item.opticImages[0]}
-                        alt="optic-img"
-                      />
-                      <p>{item.optic}</p>
-                      <p>{item.dimension}</p>
+                      <p className="text-xs opacity-80">Wattage: {item.wattage}</p>
                     </div>
                   </div>
                 </div>

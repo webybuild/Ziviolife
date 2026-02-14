@@ -340,6 +340,35 @@ function EditTechnicalSpecificationsForm() {
           />
         </div>
       </div>
+      <div className="grid grid-cols-3 gap-4">
+        <div>
+          <label className={labelStyle}>Description</label>
+          <textarea
+            className={inputStyle}
+            name="description"
+            value={formData.description}
+            onChange={(e) => updateFormData(e)}
+          />
+        </div>
+        <div>
+          <label className={labelStyle}>Area of Application</label>
+          <textarea
+            className={inputStyle}
+            name="applicationArea"
+            value={formData.applicationArea}
+            onChange={(e) => updateFormData(e)}
+          />
+        </div>
+        <div>
+          <label className={labelStyle}>Benefits</label>
+          <textarea
+            className={inputStyle}
+            name="benefits"
+            value={formData.benefits}
+            onChange={(e) => updateFormData(e)}
+          />
+        </div>
+      </div>
       <div className="text-center py-1">
         <button
           className="px-6 py-2 rounded-md text-white text-sm text-center ml-4 bg-[#1b4242]"

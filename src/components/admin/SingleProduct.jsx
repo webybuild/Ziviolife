@@ -233,20 +233,12 @@ function SingleProduct({ showButton }) {
                           {info.material}
                         </td>
                       </tr>
-                      <tr className="bg-[#ECECEC]">
-                        <td className="py-2 px-4 border-b font-light text-sm">
-                          Light source
-                        </td>
-                        <td className="py-2 px-4 border-b font-light text-right text-sm">
-                          {info.lightSource}
-                        </td>
-                      </tr>
                       <tr className="bg-[#D9D9D9]">
                         <td className="py-2 px-4 border-b font-light text-sm">
-                          Power (W)
+                          Size
                         </td>
                         <td className="py-2 px-4 border-b text-right font-light text-sm">
-                          {info.power}
+                          {info.size}
                         </td>
                       </tr>
                       <tr className="bg-[#ECECEC]">
@@ -289,14 +281,6 @@ function SingleProduct({ showButton }) {
                           {info.inputVoltage}
                         </td>
                       </tr>
-                      <tr className="bg-[#D9D9D9]">
-                        <td className="py-2 px-4 border-b font-light text-sm">
-                          Optic
-                        </td>
-                        <td className="py-2 px-4 border-b text-right font-light text-sm">
-                          {info.optic}
-                        </td>
-                      </tr>
                       <tr className="bg-[#ECECEC]">
                         <td className="py-2 px-4 border-b font-light text-sm">
                           Optic value
@@ -307,42 +291,34 @@ function SingleProduct({ showButton }) {
                       </tr>
                       <tr className="bg-[#D9D9D9]">
                         <td className="py-2 px-4 border-b font-light text-sm">
-                          CCT / CRI
+                          CCT
                         </td>
                         <td className="py-2 px-4 border-b text-right font-light text-sm">
                           {info.cct}
                         </td>
                       </tr>
-                      <tr className="bg-[#ECECEC]">
+                      <tr className="bg-[#D9D9D9]">
                         <td className="py-2 px-4 border-b font-light text-sm">
-                          Bug
+                          CRI
                         </td>
-                        <td className="py-2 px-4 border-b font-light text-right text-sm">
-                          {info.bug}
+                        <td className="py-2 px-4 border-b text-right font-light text-sm">
+                          {info.cri}
                         </td>
                       </tr>
                       <tr className="bg-[#D9D9D9]">
                         <td className="py-2 px-4 border-b font-light text-sm">
-                          ULR
+                          Finish Color
                         </td>
                         <td className="py-2 px-4 border-b text-right font-light text-sm">
-                          {info.ulr}
-                        </td>
-                      </tr>
-                      <tr className="bg-[#ECECEC]">
-                        <td className="py-2 px-4 border-b font-light text-sm">
-                          ULOR
-                        </td>
-                        <td className="py-2 px-4 border-b font-light text-right text-sm">
-                          {info.ulor}
+                          {info.finishColor}
                         </td>
                       </tr>
                       <tr className="bg-[#D9D9D9]">
                         <td className="py-2 px-4 border-b font-light text-sm">
-                          CIE flux code nº3
+                          IP
                         </td>
                         <td className="py-2 px-4 border-b text-right font-light text-sm">
-                          {info.cie}
+                          {info.ip}
                         </td>
                       </tr>
                       <tr className="bg-[#ECECEC]">
@@ -355,42 +331,18 @@ function SingleProduct({ showButton }) {
                       </tr>
                       <tr className="bg-[#D9D9D9]">
                         <td className="py-2 px-4 border-b font-light text-sm">
-                          Product colours
-                        </td>
-                        <td className="py-2 px-4 border-b text-right font-light text-sm">
-                          {info.productColors}
-                        </td>
-                      </tr>
-                      <tr className="bg-[#ECECEC]">
-                        <td className="py-2 px-4 border-b font-light text-sm">
-                          Weight
-                        </td>
-                        <td className="py-2 px-4 border-b font-light text-right text-sm">
-                          {info.weight}
-                        </td>
-                      </tr>
-                      <tr className="bg-[#D9D9D9]">
-                        <td className="py-2 px-4 border-b font-light text-sm">
                           Operating temperature
                         </td>
                         <td className="py-2 px-4 border-b text-right font-light text-sm">
                           {info.operatingTemperature}
                         </td>
                       </tr>
-                      <tr className="bg-[#ECECEC]">
-                        <td className="py-2 px-4 border-b font-light text-sm">
-                          Cable
-                        </td>
-                        <td className="py-2 px-4 border-b font-light text-right text-sm">
-                          {info.cable}
-                        </td>
-                      </tr>
                       <tr className="bg-[#D9D9D9]">
                         <td className="py-2 px-4 border-b font-light text-sm">
-                          Through wiring
+                          Wattage
                         </td>
                         <td className="py-2 px-4 border-b text-right font-light text-sm">
-                          {info.throughWiring}
+                          {info.wattage}
                         </td>
                       </tr>
                       <tr className="bg-[#ECECEC]">
@@ -399,30 +351,6 @@ function SingleProduct({ showButton }) {
                         </td>
                         <td className="py-2 px-4 border-b font-light text-right text-sm">
                           {info.lro}
-                        </td>
-                      </tr>
-                      <tr className="bg-[#D9D9D9]">
-                        <td className="py-2 px-4 border-b font-light text-sm">
-                          MacAdam Ellipse
-                        </td>
-                        <td className="py-2 px-4 border-b text-right font-light text-sm">
-                          {info.macadamEllipse}
-                        </td>
-                      </tr>
-                      <tr className="bg-[#ECECEC]">
-                        <td className="py-2 px-4 border-b font-light text-sm">
-                          Lifetime L90B10 (hours)
-                        </td>
-                        <td className="py-2 px-4 border-b font-light text-right text-sm">
-                          {info.l90B10}
-                        </td>
-                      </tr>
-                      <tr className="bg-[#D9D9D9]">
-                        <td className="py-2 px-4 border-b font-light text-sm">
-                          Lifetime L80B10 (hours)
-                        </td>
-                        <td className="py-2 px-4 border-b text-right font-light text-sm">
-                          {info.l80B10}
                         </td>
                       </tr>
                       <tr className="bg-[#ECECEC]">
@@ -435,10 +363,26 @@ function SingleProduct({ showButton }) {
                       </tr>
                       <tr className="bg-[#ECECEC]">
                         <td className="py-2 px-4 border-b font-light text-sm">
-                          Variants (On/Off)
+                          Product Description
                         </td>
                         <td className="py-2 px-4 border-b font-light text-right text-sm">
-                          {info.variant}
+                          {info.description}
+                        </td>
+                      </tr>
+                      <tr className="bg-[#ECECEC]">
+                        <td className="py-2 px-4 border-b font-light text-sm">
+                          Area of Application
+                        </td>
+                        <td className="py-2 px-4 border-b font-light text-right text-sm">
+                          {info.applicationArea}
+                        </td>
+                      </tr>
+                      <tr className="bg-[#ECECEC]">
+                        <td className="py-2 px-4 border-b font-light text-sm">
+                          Product Benefits
+                        </td>
+                        <td className="py-2 px-4 border-b font-light text-right text-sm">
+                          {info.benefits}
                         </td>
                       </tr>
                     </tbody>
@@ -472,8 +416,8 @@ function SingleProduct({ showButton }) {
                     </h1>
                     <h6 className="text-gray-500 text-sm my-3">Optic</h6>
                     <div className="flex gap-3">
-                      {info.opticImages &&
-                        info.opticImages.map((image, ind) => (
+                      {info.complianceImages &&
+                        info.complianceImages.map((image, ind) => (
                           <img
                             key={ind}
                             className="border-2"
@@ -489,7 +433,7 @@ function SingleProduct({ showButton }) {
             </div>
           </div>
         </div>
-        <Filter variants={info.productVariants} />
+        {/* <Filter variants={info.productVariants} /> */}
       </div>
     </>
   );

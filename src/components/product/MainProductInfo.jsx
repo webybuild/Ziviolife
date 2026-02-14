@@ -117,11 +117,11 @@ function MainProductInfo() {
 
           {/* Certifications */}
           <div className="flex items-center gap-6 mt-8">
-            <img src={retilap} alt="" />
-            <img src={ce} alt="" />
-            <img src={classI} alt="" />
-            <img src={ip65} alt="" />
-            <img src={ik09} alt="" />
+            {
+              mainProductInfo.complianceImages?.map((imgUrl, ind) => 
+              <img key={ind} src={url + "/images/" + imgUrl} alt="cmp_img"/>
+            )
+            }
           </div>
         </div>
       </section>
@@ -155,7 +155,7 @@ function MainProductInfo() {
                   <p className="text-xs opacity-80">
                     Product Code: {item.code}
                   </p>
-                  <p className="text-xs opacity-80">Wattage: {item.power}</p>
+                  <p className="text-xs opacity-80">Wattage: {item.wattage}</p>
                 </div>
               </div>
             ))}

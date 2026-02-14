@@ -21,7 +21,7 @@ import loaderState from "../../atoms/loaderStateAtom";
 function AddProduct() {
   const [formData, setFormData] = useState({});
   const [images, setImages] = useState([]);
-  const [opticImages, setOpticImages] = useState([]);
+  const [complianceImages, setComplianceImages] = useState([]);
   const [downloads, setDownloads] = useState({});
   const [variants, setVariants] = useRecoilState(variantState);
   const [categories, setCategories] = useRecoilState(categoryState);
@@ -70,7 +70,7 @@ function AddProduct() {
           data.append("productVariants", JSON.stringify(variant))
         );
         images.forEach((image) => data.append("image", image));
-        opticImages.forEach((image) => data.append("opticImages", image));
+        complianceImages.forEach((image) => data.append("complianceImages", image));
         Object.keys(downloads).forEach((key) =>
           data.append("pdf", downloads[key], key)
         );
@@ -78,7 +78,7 @@ function AddProduct() {
         setFormData({});
         setDownloads([]);
         setImages([]);
-        setOpticImages([]);
+        setComplianceImages([]);
         setVariants([]);
         toast.success(res.data.message, { autoClose: 3000 });
         setLoader(false);
@@ -121,10 +121,10 @@ function AddProduct() {
         textColor={"text-white"}
       />
       <UploadImages
-        title={"Optic Images"}
-        images={opticImages}
-        setImages={setOpticImages}
-        id={"optic-img"}
+        title={"Compliance Images"}
+        images={complianceImages}
+        setImages={setComplianceImages}
+        id={"comp-img"}
         textColor={"text-white"}
       />
       <DownloadList downloads={downloads} setDownloads={setDownloads} />

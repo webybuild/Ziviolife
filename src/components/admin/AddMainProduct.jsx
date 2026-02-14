@@ -15,7 +15,7 @@ function AddMainProduct({ setShowModal }) {
   const [techSpecs, setTechSpecs] = useState([]);
   const [image, setImage] = useState(null);
   const [imgUrl, setImgUrl] = useState(null);
-  const [opticImages, setOpticImages] = useState([]);
+  const [complianceImages, setComplianceImages] = useState([]);
   const [featureImages, setFeatureImages] = useState([]);
   const [specCount, setSpecCount] = useState(1);
   const [mainProducts, setMainProducts] = useRecoilState(mainProductState);
@@ -96,7 +96,7 @@ function AddMainProduct({ setShowModal }) {
         data.append("techSpecs", JSON.stringify(techSpecs));
         data.append("image", image);
         featureImages.forEach((img) => data.append("featureImages", img));
-        opticImages.forEach((img) => data.append("opticImages", img));
+        complianceImages.forEach((img) => data.append("complianceImages", img));
         const res = await axios.post(url + "/main_product", data);
         console.log(res.data);
         const products = [...mainProducts];
@@ -168,10 +168,10 @@ function AddMainProduct({ setShowModal }) {
           </div>
           <div className="flex-1">
             <UploadImages
-              title={"optic"}
-              images={opticImages}
-              setImages={setOpticImages}
-              id={"opt-img"}
+              title={"compliance"}
+              images={complianceImages}
+              setImages={setComplianceImages}
+              id={"comp-img"}
               width={"50px"}
               textColor={"text-black"}
             />

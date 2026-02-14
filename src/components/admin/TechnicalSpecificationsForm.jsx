@@ -31,11 +31,11 @@ function TechnicalSpecificationsForm({ formData, updateFormData }) {
           />
         </div>
         <div>
-          <label className={labelStyle}>Dimensions</label>
+          <label className={labelStyle}>Wattage</label>
           <input
             className={inputStyle}
-            name="dimension"
-            value={formData.dimension}
+            name="wattage"
+            value={formData.wattage}
             onChange={(e) => updateFormData(e)}
           />
         </div>
@@ -47,24 +47,6 @@ function TechnicalSpecificationsForm({ formData, updateFormData }) {
             className={inputStyle}
             name="material"
             value={formData.material}
-            onChange={(e) => updateFormData(e)}
-          />
-        </div>
-        <div>
-          <label className={labelStyle}>Light Source</label>
-          <input
-            className={inputStyle}
-            name="lightSource"
-            value={formData.lightSource}
-            onChange={(e) => updateFormData(e)}
-          />
-        </div>
-        <div>
-          <label className={labelStyle}>Power (W)</label>
-          <input
-            className={inputStyle}
-            name="power"
-            value={formData.power}
             onChange={(e) => updateFormData(e)}
           />
         </div>
@@ -118,11 +100,20 @@ function TechnicalSpecificationsForm({ formData, updateFormData }) {
           />
         </div>
         <div>
-          <label className={labelStyle}>Optic</label>
+          <label className={labelStyle}>Size</label>
           <input
             className={inputStyle}
-            name="optic"
-            value={formData.optic}
+            name="size"
+            value={formData.size}
+            onChange={(e) => updateFormData(e)}
+          />
+        </div>
+        <div>
+          <label className={labelStyle}>IP</label>
+          <input
+            className={inputStyle}
+            name="ip"
+            value={formData.ip}
             onChange={(e) => updateFormData(e)}
           />
         </div>
@@ -138,7 +129,7 @@ function TechnicalSpecificationsForm({ formData, updateFormData }) {
           />
         </div>
         <div>
-          <label className={labelStyle}>CCT / CRI</label>
+          <label className={labelStyle}>CCT</label>
           <input
             className={inputStyle}
             name="cct"
@@ -147,43 +138,16 @@ function TechnicalSpecificationsForm({ formData, updateFormData }) {
           />
         </div>
         <div>
-          <label className={labelStyle}>Bug</label>
+          <label className={labelStyle}>CRI</label>
           <input
             className={inputStyle}
-            name="bug"
-            value={formData.bug}
+            name="cri"
+            value={formData.cri}
             onChange={(e) => updateFormData(e)}
           />
         </div>
       </div>
       <div className="grid grid-cols-3 gap-4">
-        <div>
-          <label className={labelStyle}>ULR</label>
-          <input
-            className={inputStyle}
-            name="ulr"
-            value={formData.ulr}
-            onChange={(e) => updateFormData(e)}
-          />
-        </div>
-        <div>
-          <label className={labelStyle}>ULOR</label>
-          <input
-            className={inputStyle}
-            name="ulor"
-            value={formData.ulor}
-            onChange={(e) => updateFormData(e)}
-          />
-        </div>
-        <div>
-          <label className={labelStyle}>CIE flux code nº3</label>
-          <input
-            className={inputStyle}
-            name="cie"
-            value={formData.cie}
-            onChange={(e) => updateFormData(e)}
-          />
-        </div>
       </div>
       <div className="grid grid-cols-3 gap-4">
         <div>
@@ -196,20 +160,11 @@ function TechnicalSpecificationsForm({ formData, updateFormData }) {
           />
         </div>
         <div>
-          <label className={labelStyle}>Product colours</label>
+          <label className={labelStyle}>Finish colour</label>
           <input
             className={inputStyle}
-            name="productColors"
-            value={formData.productColors}
-            onChange={(e) => updateFormData(e)}
-          />
-        </div>
-        <div>
-          <label className={labelStyle}>Weight</label>
-          <input
-            className={inputStyle}
-            name="weight"
-            value={formData.weight}
+            name="finishColor"
+            value={formData.finishColor}
             onChange={(e) => updateFormData(e)}
           />
         </div>
@@ -224,24 +179,6 @@ function TechnicalSpecificationsForm({ formData, updateFormData }) {
             onChange={(e) => updateFormData(e)}
           />
         </div>
-        <div>
-          <label className={labelStyle}>Cable</label>
-          <input
-            className={inputStyle}
-            name="cable"
-            value={formData.cable}
-            onChange={(e) => updateFormData(e)}
-          />
-        </div>
-        <div>
-          <label className={labelStyle}>Through wiring</label>
-          <input
-            className={inputStyle}
-            name="throughWiring"
-            value={formData.throughWiring}
-            onChange={(e) => updateFormData(e)}
-          />
-        </div>
       </div>
       <div className="grid grid-cols-3 gap-4">
         <div>
@@ -253,35 +190,8 @@ function TechnicalSpecificationsForm({ formData, updateFormData }) {
             onChange={(e) => updateFormData(e)}
           />
         </div>
-        <div>
-          <label className={labelStyle}>MacAdam Ellipse</label>
-          <input
-            className={inputStyle}
-            name="macadamEllipse"
-            value={formData.macadamEllipse}
-            onChange={(e) => updateFormData(e)}
-          />
-        </div>
-        <div>
-          <label className={labelStyle}>Lifetime L90B10 (hours)</label>
-          <input
-            className={inputStyle}
-            name="l90B10"
-            value={formData.l90B10}
-            onChange={(e) => updateFormData(e)}
-          />
-        </div>
       </div>
       <div className="grid grid-cols-3 gap-4">
-        <div>
-          <label className={labelStyle}>Lifetime L80B10 (hours)</label>
-          <input
-            className={inputStyle}
-            name="l80B10"
-            value={formData.l80B10}
-            onChange={(e) => updateFormData(e)}
-          />
-        </div>
         <div>
           <label className={labelStyle}>Lifetime L80B50 (hours)</label>
           <input
@@ -297,6 +207,35 @@ function TechnicalSpecificationsForm({ formData, updateFormData }) {
             className={inputStyle}
             name="variant"
             value={formData.variant}
+            onChange={(e) => updateFormData(e)}
+          />
+        </div>
+      </div>
+      <div className="grid grid-cols-3 gap-4">
+        <div>
+          <label className={labelStyle}>Description</label>
+          <textarea
+            className={inputStyle}
+            name="description"
+            value={formData.description}
+            onChange={(e) => updateFormData(e)}
+          />
+        </div>
+        <div>
+          <label className={labelStyle}>Area of Application</label>
+          <textarea
+            className={inputStyle}
+            name="applicationArea"
+            value={formData.applicationArea}
+            onChange={(e) => updateFormData(e)}
+          />
+        </div>
+        <div>
+          <label className={labelStyle}>Benefits</label>
+          <textarea
+            className={inputStyle}
+            name="benefits"
+            value={formData.benefits}
             onChange={(e) => updateFormData(e)}
           />
         </div>
