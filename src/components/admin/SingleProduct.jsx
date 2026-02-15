@@ -9,17 +9,10 @@ import ce from "../../assets/ce.png";
 import classI from "../../assets/classI.png";
 import ip65 from "../../assets/ip65.png";
 import ik09 from "../../assets/ik09.png";
-import icon1 from "../../assets/download_icons/family_spect_sheet.png";
 import icon2 from "../../assets/download_icons/product_spect_sheet.png";
 import icon3 from "../../assets/download_icons/installation_manual.png";
-import icon4 from "../../assets/download_icons/technical_drawing.png";
 import icon5 from "../../assets/download_icons/2d_cad.png";
-import icon6 from "../../assets/download_icons/bim_ifc.png";
-import icon7 from "../../assets/download_icons/dialux_uld.png";
 import icon8 from "../../assets/download_icons/ies.png";
-import icon9 from "../../assets/download_icons/3d.png";
-import icon10 from "../../assets/download_icons/ar_tracker.png";
-import icon11 from "../../assets/download_icons/ce.png";
 import Filter from "./Filter";
 import { useEffect, useState } from "react";
 import mainProductNameState from "../../atoms/mainProductNameStateAtom";
@@ -65,17 +58,10 @@ function SingleProduct({ showButton }) {
   }, [mainProductName]);
 
   const downloadImg = [
-    { title: "Family Specification", image: icon1, key: "family-spec" },
-    { title: "Product Specification", image: icon2, key: "product-spec" },
-    { title: "Installation Manual", image: icon3, key: "install-manual" },
-    { title: "Technical Drawing", image: icon4, key: "tech-drawing" },
-    { title: "2D CAD", image: icon5, key: "2d-cad" },
-    { title: "BIM IFC", image: icon6, key: "bim" },
-    { title: "DIALux ULD", image: icon7, key: "dialux" },
+    { title: "Product Data Sheet", image: icon2, key: "product-data" },
     { title: "IES", image: icon8, key: "ies" },
-    { title: "3D", image: icon9, key: '3d-view' },
-    { title: "AR Tracker", image: icon10, key: "ar" },
-    { title: "CE", image: icon11, key: "ce" },
+    { title: "2D Image", image: icon5, key: "2d-image" },
+    { title: "Installation Manual", image: icon3, key: "install-manual" },
   ];
 
   async function fetchSingleProductInfo() {

@@ -10,7 +10,7 @@ import Modal from "./Modal";
 import AddCategory from "./AddCategory";
 import AddSubCategory from "./AddSubCategory";
 import AddMainProduct from "./AddMainProduct";
-import AddVariants from "./AddVariants";
+// import AddVariants from "./AddVariants";
 import variantState from "../../atoms/variantsStateAtom";
 import { url } from "../../utils/config";
 import categoryState from "../../atoms/categoryStateAtom";
@@ -66,9 +66,9 @@ function AddProduct() {
         Object.keys(formData).forEach((fd) => {
           data.append(fd, formData[fd]);
         });
-        variants.forEach((variant) =>
-          data.append("productVariants", JSON.stringify(variant))
-        );
+        // variants.forEach((variant) =>
+        //   data.append("productVariants", JSON.stringify(variant))
+        // );
         images.forEach((image) => data.append("image", image));
         complianceImages.forEach((image) => data.append("complianceImages", image));
         Object.keys(downloads).forEach((key) =>
@@ -79,7 +79,7 @@ function AddProduct() {
         setDownloads([]);
         setImages([]);
         setComplianceImages([]);
-        setVariants([]);
+        // setVariants([]);
         toast.success(res.data.message, { autoClose: 3000 });
         setLoader(false);
       } catch (error) {
@@ -128,7 +128,7 @@ function AddProduct() {
         textColor={"text-white"}
       />
       <DownloadList downloads={downloads} setDownloads={setDownloads} />
-      <AddVariants variants={variants} setVariants={setVariants} />
+      {/* <AddVariants variants={variants} setVariants={setVariants} /> */}
       <div className="text-center mt-12 py-4">
         <button
           className="text-white px-6 py-2 bg-[#1b4242] rounded-md"

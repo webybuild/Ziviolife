@@ -168,30 +168,7 @@ function MainProductInfo({ showButton, width }) {
               </div>
             </div>
           </div>
-          <div className="max-w-[1240px] mx-auto px-4 py-2 flex items-start h-full gap-12">
-            <div className="left flex-1">
-              <h1 className="font-bold mb-3">TECHNICAL SPECIFICATIONS</h1>
-              <ul className="features-list">
-                {mainProductInfo?.techSpecs?.map((item, ind) => (
-                  <li key={ind}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="right flex-1">
-              <h1 className="font-bold my-2">Feature</h1>
-              <div className="flex flex-wrap gap-4">
-                {mainProductInfo?.featureImages?.map((image, ind) => (
-                  <img
-                    key={ind}
-                    src={url + "/images/" + image}
-                    height={"70px"}
-                    width={"70px"}
-                    alt=""
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+
         </div>
         <div className="mx-auto">
           <div className="pt-11 pb-28 px-24">

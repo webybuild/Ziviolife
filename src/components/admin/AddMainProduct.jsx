@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import cross from "../../assets/basic_icons/cross.png";
 import axios from "axios";
 import { url } from "../../utils/config";
 import UploadImages from "./UploadImages";
@@ -12,12 +11,9 @@ import mainProductIdAtom from "../../atoms/mainProductIdAtom";
 
 function AddMainProduct({ setShowModal }) {
   const [formData, setFormData] = useState("");
-  const [techSpecs, setTechSpecs] = useState([]);
   const [image, setImage] = useState(null);
   const [imgUrl, setImgUrl] = useState(null);
   const [complianceImages, setComplianceImages] = useState([]);
-  const [featureImages, setFeatureImages] = useState([]);
-  const [specCount, setSpecCount] = useState(1);
   const [mainProducts, setMainProducts] = useRecoilState(mainProductState);
   const [subCategoryId, setSubCategoryId] = useRecoilState(subCategoryIdAtom);
   const [mainProductId, setMainProductId] = useRecoilState(mainProductIdAtom);
@@ -43,45 +39,7 @@ function AddMainProduct({ setShowModal }) {
     setFormData(data);
   }
 
-  function renderSpecInputs() {
-    const input = [];
-    function deleteTechSpec(ind) {
-      setSpecCount(+specCount - 1);
-      const data = [...techSpecs];
-      data.splice(ind, 1);
-      setTechSpecs(data);
-    }
 
-    for (let i = 0; i < specCount; i++) {
-      const element = (
-        <div className="flex">
-          <input
-            className={inputStyle + " my-1"}
-            key={i}
-            value={techSpecs[i]}
-            onChange={(e) => updateTechnicalSpecs(e, i)}
-          />
-          <div className="flex items-center px-1 cursor-pointer">
-            <img
-              src={cross}
-              width={"20px"}
-              height={"20px"}
-              onClick={() => deleteTechSpec(i)}
-            />
-          </div>
-        </div>
-      );
-      input.push(element);
-    }
-    return input;
-  }
-
-  function updateTechnicalSpecs(e, ind) {
-    const { value } = e.target;
-    const data = [...techSpecs];
-    data[ind] = value;
-    setTechSpecs(data);
-  }
 
 
   async function addMainProduct() {
@@ -93,9 +51,7 @@ function AddMainProduct({ setShowModal }) {
           data.append(fd, formData[fd]);
         });
         data.append("subCategoryId", subCategoryId);
-        data.append("techSpecs", JSON.stringify(techSpecs));
         data.append("image", image);
-        featureImages.forEach((img) => data.append("featureImages", img));
         complianceImages.forEach((img) => data.append("complianceImages", img));
         const res = await axios.post(url + "/main_product", data);
         console.log(res.data);
@@ -138,16 +94,6 @@ function AddMainProduct({ setShowModal }) {
           value={formData.description}
           onChange={(e) => updateFormData(e)}
         />
-        <div className="flex py-1">
-          <label className={labelStyle}>Technical Specifications</label>
-          <span
-            className="ml-2 px-2 border border-gray-300 text-gray-500 rounded-md cursor-pointer"
-            onClick={() => setSpecCount(+specCount + 1)}
-          >
-            + Add More
-          </span>
-        </div>
-        {renderSpecInputs()}
         <input
           className="hidden"
           type="file"
@@ -155,27 +101,15 @@ function AddMainProduct({ setShowModal }) {
           accept="image/*"
           onChange={(e) => selectImage(e)}
         />
-        <div className="flex justify-between gap-4">
-          <div className="flex-1">
-            <UploadImages
-              title={"feature"}
-              images={featureImages}
-              setImages={setFeatureImages}
-              id={"feat-img"}
-              width={"50px"}
-              textColor={"text-black"}
-            />
-          </div>
-          <div className="flex-1">
-            <UploadImages
-              title={"compliance"}
-              images={complianceImages}
-              setImages={setComplianceImages}
-              id={"comp-img"}
-              width={"50px"}
-              textColor={"text-black"}
-            />
-          </div>
+        <div className="flex-1">
+          <UploadImages
+            title={"compliance"}
+            images={complianceImages}
+            setImages={setComplianceImages}
+            id={"main-comp-img"}
+            width={"50px"}
+            textColor={"text-black"}
+          />
         </div>
         {imgUrl && (
           <div className="flex justify-center py-4">
